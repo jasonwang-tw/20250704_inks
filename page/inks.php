@@ -29,15 +29,15 @@
 						background: "hsl(var(--background))",
 						foreground: "hsl(var(--foreground))",
 						primary: {
-							DEFAULT: "hsl(var(--primary))",
+							DEFAULT: "#0c386a",
 							foreground: "hsl(var(--primary-foreground))",
 						},
 						secondary: {
-							DEFAULT: "hsl(var(--secondary))",
+							DEFAULT: "#FED101",
 							foreground: "hsl(var(--secondary-foreground))",
 						},
 						destructive: {
-							DEFAULT: "hsl(var(--destructive))",
+							DEFAULT: "#B9B390",
 							foreground: "hsl(var(--destructive-foreground))",
 						},
 						muted: {
@@ -83,17 +83,13 @@
 
 <body class="min-h-screen bg-background text-foreground">
 	<!-- 導航欄 -->
-	<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+	<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="flex items-center justify-between h-16">
 				<!-- Logo -->
 				<div class="flex items-center">
-					<a href="#" class="flex items-center space-x-2">
-						<div
-							class="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-							<span class="text-white font-bold text-sm">印</span>
-						</div>
-						<span class="text-xl font-bold text-foreground">INKS印事</span>
+					<a href="<?php echo home_url (); ?>" class="flex items-center space-x-2">
+						<img src="<?php echo get_template_directory_uri (); ?>/assets/logo.png" alt="INKS">
 					</a>
 				</div>
 
@@ -101,33 +97,33 @@
 				<div class="hidden md:block">
 					<div class="ml-10 flex items-baseline space-x-8">
 						<a href="#features"
-							class="text-muted-foreground hover:text-foreground px-3 py-2 text-sm font-medium transition-colors duration-200">功能特色</a>
+							class="text-primary hover:text-secondary px-3 py-2 text-sm font-medium transition-colors duration-200">功能特色</a>
 						<a href="#solutions"
-							class="text-muted-foreground hover:text-foreground px-3 py-2 text-sm font-medium transition-colors duration-200">解決方案</a>
+							class="text-primary hover:text-secondary px-3 py-2 text-sm font-medium transition-colors duration-200">解決方案</a>
 						<a href="#partners"
-							class="text-muted-foreground hover:text-foreground px-3 py-2 text-sm font-medium transition-colors duration-200">合作夥伴</a>
+							class="text-primary hover:text-secondary px-3 py-2 text-sm font-medium transition-colors duration-200">合作夥伴</a>
 						<a href="#pricing"
-							class="text-muted-foreground hover:text-foreground px-3 py-2 text-sm font-medium transition-colors duration-200">方案價格</a>
+							class="text-primary hover:text-secondary px-3 py-2 text-sm font-medium transition-colors duration-200">方案價格</a>
 						<a href="#contact"
-							class="text-muted-foreground hover:text-foreground px-3 py-2 text-sm font-medium transition-colors duration-200">聯絡我們</a>
+							class="text-primary hover:text-secondary px-3 py-2 text-sm font-medium transition-colors duration-200">聯絡我們</a>
 					</div>
 				</div>
 
 				<!-- Right side buttons -->
 				<div class="hidden md:flex items-center space-x-4">
 					<button id="theme-toggle"
-						class="w-9 h-9 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex items-center justify-center">
+						class="w-9 h-9 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex items-center justify-center hidden">
 						<i data-lucide="sun"
 							class="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"></i>
 						<i data-lucide="moon"
 							class="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"></i>
 					</button>
 					<button
-						class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2">
+						class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 hidden">
 						了解功能
 					</button>
 					<button
-						class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-orange-500 text-white hover:bg-orange-600 h-9 px-4 py-2">
+						class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary/80 h-9 px-4 py-2">
 						免費諮詢
 					</button>
 				</div>
@@ -181,14 +177,18 @@
 		class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
 		<!-- 背景裝飾 -->
 		<div class="absolute inset-0 overflow-hidden">
-			<div
-				class="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 dark:bg-orange-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob">
-			</div>
-			<div
-				class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000">
-			</div>
-			<div
-				class="absolute top-40 left-40 w-80 h-80 bg-purple-200 dark:bg-purple-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000">
+			<img src="<?php echo get_template_directory_uri (); ?>/assets/bg.jpg" alt="background"
+				class="w-full h-full object-cover">
+			<div class="hidden">
+				<div
+					class="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 dark:bg-orange-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob">
+				</div>
+				<div
+					class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000">
+				</div>
+				<div
+					class="absolute top-40 left-40 w-80 h-80 bg-purple-200 dark:bg-purple-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000">
+				</div>
 			</div>
 		</div>
 
@@ -197,27 +197,25 @@
 				<!-- 左側內容 -->
 				<div class="text-center lg:text-left">
 					<div
-						class="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-sm font-medium mb-6">
+						class="inline-flex items-center px-4 py-2 rounded-full bg-secondary dark:bg-secondary/30 text-primary dark:text-secondary text-sm font-medium mb-6">
 						<i data-lucide="trending-up" class="w-4 h-4 mr-2"></i>
 						已有 500+ 印刷業者加入使用
 					</div>
 
 					<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-						<span class="text-orange-500">INKS印事</span>
-						<br />
-						印刷智能工單系統
-						<br />
-						<span class="text-blue-600 dark:text-blue-400">服務平台</span>
+						<div class="text-white mb-4">INKS印事</div>
+						<div class="text-white mb-4">印刷智能工單系統</div>
+						<div class="text-secondary">服務平台</div>
 					</h1>
 
-					<p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
+					<p class="text-xl text-white mb-8 max-w-2xl">
 						連接需求方與生產方的橋樑，讓印刷業數位轉型更簡單。
 						整合人員管理、專案管理與印刷管理，提升效率與客戶滿意度。
 					</p>
 
 					<div class="flex flex-col sm:flex-row gap-4 mb-12">
 						<button
-							class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-orange-500 text-white hover:bg-orange-600 h-11 px-8">
+							class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary/80 h-11 px-8">
 							了解功能
 							<i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
 						</button>
@@ -230,17 +228,17 @@
 					<!-- 統計數據 -->
 					<div class="grid grid-cols-3 gap-8">
 						<div class="text-center">
-							<div id="users-count" class="text-3xl font-bold text-gray-900 dark:text-white">500+</div>
-							<div class="text-sm text-gray-600 dark:text-gray-400">印刷業者</div>
+							<div id="users-count" class="text-3xl font-bold text-secondary dark:text-white">500+</div>
+							<div class="text-sm text-white dark:text-gray-400">印刷業者</div>
 						</div>
 						<div class="text-center">
-							<div id="orders-count" class="text-3xl font-bold text-gray-900 dark:text-white">24</div>
-							<div class="text-sm text-gray-600 dark:text-gray-400">待處理工單</div>
+							<div id="orders-count" class="text-3xl font-bold text-secondary dark:text-white">24</div>
+							<div class="text-sm text-white dark:text-gray-400">待處理工單</div>
 						</div>
 						<div class="text-center">
-							<div id="efficiency-count" class="text-3xl font-bold text-gray-900 dark:text-white">65%
+							<div id="efficiency-count" class="text-3xl font-bold text-secondary dark:text-white">65%
 							</div>
-							<div class="text-sm text-gray-600 dark:text-gray-400">本週完成率</div>
+							<div class="text-sm text-white dark:text-gray-400">本週完成率</div>
 						</div>
 					</div>
 				</div>
@@ -884,9 +882,9 @@
 				</div>
 
 				<!-- 專業版 -->
-				<div class="bg-card text-card-foreground rounded-lg border-2 border-orange-500 p-6 relative">
+				<div class="bg-card text-card-foreground rounded-lg border-2 border-secondary p-6 relative">
 					<div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-						<span class="bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-medium">最受歡迎</span>
+						<span class="bg-secondary text-white px-4 py-1 rounded-full text-xs font-medium">最受歡迎</span>
 					</div>
 					<div class="text-center mb-6">
 						<h3 class="text-xl font-semibold text-foreground mb-2">專業版</h3>
@@ -933,7 +931,7 @@
 						</li>
 					</ul>
 					<button
-						class="btn-animate w-full inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-orange-500 text-white hover:bg-orange-600 h-10 px-4 py-2">
+						class="btn-animate w-full inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-primary hover:bg-secondary/80 h-10 px-4 py-2">
 						選擇方案
 					</button>
 				</div>
@@ -996,7 +994,7 @@
 					<h4 class="text-lg font-semibold text-foreground mb-2">需要客製化方案？</h4>
 					<p class="text-muted-foreground text-sm mb-4">我們提供符合您特定需求的客製化解決方案</p>
 					<button
-						class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-orange-500 text-white hover:bg-orange-600 h-10 px-6">
+						class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/80 h-10 px-6">
 						聯繫我們
 					</button>
 				</div>
@@ -1159,7 +1157,7 @@
 								rows="4" placeholder="請描述您的需求或問題"></textarea>
 						</div>
 						<button type="submit"
-							class="btn-animate w-full inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-orange-500 text-white hover:bg-orange-600 h-11 px-8">
+							class="btn-animate w-full inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/80 h-11 px-8">
 							送出訊息
 						</button>
 					</form>
@@ -1222,16 +1220,12 @@
 	</section>
 
 	<!-- 頁尾 -->
-	<footer class="bg-slate-900 text-white py-12">
+	<footer class="text-primary-foreground py-12" style="background: linear-gradient(135deg, #0c386a, #071d36);">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="grid md:grid-cols-4 gap-8">
-				<div>
-					<div class="flex items-center space-x-2 mb-4">
-						<div
-							class="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-							<span class="text-white font-bold text-sm">印</span>
-						</div>
-						<span class="text-xl font-bold">INKS印事</span>
+			<div class="grid md:grid-cols-4 gap-16">
+				<div class="flex flex-col space-y-8">
+					<div>
+						<img src="<?php echo get_template_directory_uri (); ?>/assets/logo_w.png" alt="INKS">
 					</div>
 					<p class="text-gray-400 text-sm mb-4">
 						印刷智能工單系統服務平台，讓印刷業數位轉型更簡單。
@@ -1280,7 +1274,7 @@
 				</div>
 			</div>
 
-			<div class="border-t border-gray-800 mt-8 pt-8 text-center">
+			<div class="border-t border-gray-600 mt-10 pt-10 text-center">
 				<p class="text-gray-400 text-sm">
 					© 2025 INKS印事平台. 版權所有. |
 					<a href="#" class="hover:text-white transition-colors">隱私政策</a> |
@@ -1418,7 +1412,7 @@
 		// 初始化所有功能
 		document.addEventListener('DOMContentLoaded', () => {
 			initTheme();
-			initNavbar();
+			// initNavbar();
 			initMobileMenu();
 			initFAQ();
 			initSmoothScroll();
