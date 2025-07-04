@@ -14,6 +14,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>INKS印事 - 印刷智能工單系統服務平台</title>
+	<meta name="description" content="INKS印事 - 印刷智能工單系統服務平台">
+	<meta name="keywords" content="印刷智能工單系統, 印刷工單系統, 印刷管理系統, 印刷業管理系統, 印刷業工單系統, 印刷業管理系統, 印刷業工單系統, 印刷業管理系統, 印刷業工單系統">
+	<link rel="icon" href="<?php echo get_template_directory_uri (); ?>/assets/favicon.png" type="image/png">
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 	<script>
