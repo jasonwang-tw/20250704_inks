@@ -1,0 +1,20 @@
+{
+  "name": "intentionally-blank",
+  "version": "1.0.0",
+  "description": "=== Intentionally Blank === Contributors: nilovelez Tags: featured-images, custom-background, theme-options, translation-ready Requires at least: 4.6 Tested up to: 6.3 Stable tag: trunk License: GPLv2 or later License URI: http://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "browser-sync start --config bs-config.js",
+    "watch": "browser-sync start --config bs-config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1"
+  }
+}
