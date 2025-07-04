@@ -231,12 +231,14 @@
 
 	$mobile_buttons = [ 
 		[ 
-			'text'  => '了解功能',
-			'class' => 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+			'text'   => '了解功能',
+			'class'  => 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+			'hidden' => 'hidden',
 		],
 		[ 
-			'text'  => '免費諮詢',
-			'class' => 'bg-orange-500 text-white hover:bg-orange-600',
+			'text'   => '免費諮詢',
+			'class'  => 'bg-primary text-white hover:bg-primary/80',
+			'hidden' => '',
 		],
 	];
 	?>
@@ -280,7 +282,7 @@
 				<!-- Mobile menu button -->
 				<div class="md:hidden flex items-center space-x-2">
 					<button id="theme-toggle-mobile"
-						class="w-9 h-9 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex items-center justify-center">
+						class="w-9 h-9 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex items-center justify-center hidden">
 						<i data-lucide="sun"
 							class="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"></i>
 						<i data-lucide="moon"
@@ -303,7 +305,7 @@
 					<div class="flex flex-col space-y-2 px-3 pt-4">
 						<?php foreach ( $mobile_buttons as $button ) : ?>
 							<button
-								class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 <?php echo $button[ 'class' ]; ?> h-9 px-4 py-2">
+								class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 <?php echo $button[ 'class' ]; ?> h-9 px-4 py-2 <?php echo $button[ 'hidden' ]; ?>">
 								<?php echo $button[ 'text' ]; ?>
 							</button>
 						<?php endforeach; ?>
@@ -333,7 +335,7 @@
 			</div>
 		</div>
 
-		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
 			<div class="grid lg:grid-cols-2 gap-12 items-center">
 				<!-- 左側內容 -->
 				<div class="text-center lg:text-left">
@@ -344,7 +346,6 @@
 					</div>
 
 					<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-						<div class="text-white mb-4">INKS印事</div>
 						<div class="text-white mb-4">印刷智能工單系統</div>
 						<div class="text-secondary">服務平台</div>
 					</h1>
