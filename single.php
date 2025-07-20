@@ -35,7 +35,7 @@ get_header ();
 
 			<!-- 文章資訊 -->
 			<div
-				class="flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-6 text-white/90 text-sm pl-24 md:pl-0">
+				class="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-6 text-white/90 text-sm">
 				<div class="flex items-center space-x-2">
 					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
