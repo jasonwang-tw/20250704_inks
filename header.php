@@ -195,6 +195,35 @@
 		.dark ::-webkit-scrollbar-thumb:hover {
 			background: #9ca3af;
 		}
+
+		/* 手機選單樣式 */
+		.mobile-nav-menu {
+			display: flex;
+			flex-direction: column;
+			margin-top: 0 !important;
+		}
+
+		.mobile-nav-menu li {
+			list-style: none;
+		}
+
+		.mobile-nav-menu a {
+			display: block;
+			padding: 12px;
+			color: hsl(var(--muted-foreground));
+			text-decoration: none;
+			font-size: 1rem;
+			font-weight: 500;
+			transition: color 0.2s ease;
+		}
+
+		.mobile-nav-menu a:hover {
+			color: hsl(var(--foreground));
+		}
+
+		.mobile-nav-menu .active a {
+			color: hsl(var(--primary));
+		}
 	</style>
 
 	<?php wp_head (); ?>
@@ -205,11 +234,12 @@
 <body class="min-h-screen bg-background text-foreground">
 	<!-- 導航欄 -->
 	<?php
+	$home_url  = home_url ();
 	$nav_items = [ 
-		[ 'text' => '功能特色', 'href' => '#features' ],
-		[ 'text' => '解決方案', 'href' => '#solutions' ],
-		[ 'text' => '合作夥伴', 'href' => '#partners' ],
-		[ 'text' => '方案價格', 'href' => '#pricing' ],
+		[ 'text' => '功能特色', 'href' => $home_url . '#features' ],
+		[ 'text' => '解決方案', 'href' => $home_url . '#solutions' ],
+		[ 'text' => '合作夥伴', 'href' => $home_url . '#partners' ],
+		[ 'text' => '方案價格', 'href' => $home_url . '#pricing' ],
 	];
 
 	$nav_buttons = [ 
@@ -308,7 +338,17 @@
 					<?php foreach ( $nav_items as $item ) : ?>
 						<a href="<?php echo $item[ 'href' ]; ?>"
 							class="text-muted-foreground hover:text-foreground block px-3 py-2 text-base font-medium"><?php echo $item[ 'text' ]; ?></a>
-					<?php endforeach; ?>
+					<?php endforeach;
+
+					// 使用 WordPress 內建的導航列功能
+					wp_nav_menu ( array(
+						'theme_location' => 'mobile_menu',
+						'container'      => false,
+						'menu_class'     => 'mobile-nav-menu',
+						'fallback_cb'    => false,
+						'walker'         => new Custom_Nav_Walker(),
+					) );
+					?>
 					<div class="flex flex-col space-y-2 px-3 pt-4">
 						<?php foreach ( $mobile_buttons as $button ) : ?>
 							<button
