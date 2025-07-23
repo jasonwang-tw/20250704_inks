@@ -252,10 +252,10 @@ wp_footer ();
 	});
 
 	// 表單提交處理
-	document.querySelector('form').addEventListener('submit', (e) => {
-		e.preventDefault();
-		alert('感謝您的訊息！我們將盡快與您聯繫。');
-	});
+	// document.querySelector('form').addEventListener('submit', (e) => {
+	// 	e.preventDefault();
+	// 	alert('感謝您的訊息！我們將盡快與您聯繫。');
+	// });
 </script>
 </body>
 

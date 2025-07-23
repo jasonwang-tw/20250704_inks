@@ -844,63 +844,7 @@ $faq_items = [
 		<div class="grid lg:grid-cols-2 gap-12">
 			<!-- 聯絡表單 -->
 			<div class="bg-card text-card-foreground rounded-lg border border-border p-8">
-				<form class="space-y-6">
-					<div class="grid md:grid-cols-2 gap-4">
-						<div>
-							<label
-								class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground">姓名</label>
-							<input
-								class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1"
-								placeholder="請輸入您的姓名" />
-						</div>
-						<div>
-							<label
-								class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground">公司名稱</label>
-							<input
-								class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1"
-								placeholder="請輸入公司名稱" />
-						</div>
-					</div>
-					<div class="grid md:grid-cols-2 gap-4">
-						<div>
-							<label
-								class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground">電子郵件</label>
-							<input type="email"
-								class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1"
-								placeholder="請輸入電子郵件" />
-						</div>
-						<div>
-							<label
-								class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground">聯絡電話</label>
-							<input
-								class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1"
-								placeholder="請輸入聯絡電話" />
-						</div>
-					</div>
-					<div>
-						<label
-							class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground">業務類型</label>
-						<select
-							class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1">
-							<option>請選擇業務類型</option>
-							<option>B2C代印店</option>
-							<option>B2B印刷廠</option>
-							<option>設計師/個人用戶</option>
-							<option>其他</option>
-						</select>
-					</div>
-					<div>
-						<label
-							class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground">訊息內容</label>
-						<textarea
-							class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1"
-							rows="4" placeholder="請描述您的需求或問題"></textarea>
-					</div>
-					<button type="submit"
-						class="btn-animate w-full inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/80 h-11 px-8">
-						送出訊息
-					</button>
-				</form>
+				<?php echo do_shortcode ( '[contact-form-7 id="d25aa15" title="聯絡我們"]' ); ?>
 			</div>
 
 			<!-- 聯絡資訊 -->

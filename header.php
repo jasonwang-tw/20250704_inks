@@ -224,6 +224,12 @@
 		.mobile-nav-menu .active a {
 			color: hsl(var(--primary));
 		}
+
+		span.wpcf7-not-valid-tip {
+			font-size: 14px !important;
+			display: inline-block !important;
+			padding: 5px 0 0 5px !important;
+		}
 	</style>
 
 	<?php wp_head (); ?>
@@ -239,7 +245,7 @@
 		[ 'text' => '功能特色', 'href' => $home_url . '#features' ],
 		[ 'text' => '解決方案', 'href' => $home_url . '#solutions' ],
 		[ 'text' => '合作夥伴', 'href' => $home_url . '#partners' ],
-		[ 'text' => '方案價格', 'href' => $home_url . '#pricing' ],
+		//[ 'text' => '方案價格', 'href' => $home_url . '#pricing' ],
 	];
 
 	$nav_buttons = [ 
