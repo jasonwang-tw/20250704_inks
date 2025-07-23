@@ -716,7 +716,7 @@ $pricing_plans = [
 	],
 ];
 ?>
-<section id="pricing" class="py-20 bg-background">
+<section id="pricing" class="py-20 bg-background hidden">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-16">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">訂閱方案</h2>

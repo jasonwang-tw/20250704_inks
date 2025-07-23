@@ -88,7 +88,7 @@ wp_footer ();
 <script>
 
 	// 登入狀態
-	const login = <?php echo $login; ?>;
+	const login = <?php echo $login ? 'true' : 'false'; ?>;
 
 	// 登入後導航欄高度
 	function user_login() {
