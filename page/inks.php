@@ -816,7 +816,7 @@ $faq_items = [
 					<button class="faq-toggle w-full text-left p-6 focus:outline-none"
 						data-target="<?php echo $faq[ 'id' ]; ?>">
 						<div class="flex items-center justify-between">
-							<h3 class="text-lg font-semibold text-foreground"><?php echo $faq[ 'question' ]; ?></h3>
+							<h5 class="text-lg font-semibold text-foreground"><?php echo $faq[ 'question' ]; ?></h5>
 							<i data-lucide="chevron-down" class="w-5 h-5 text-muted-foreground transition-transform"></i>
 						</div>
 					</button>

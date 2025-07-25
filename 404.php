@@ -74,8 +74,8 @@ get_header ();
 							</svg>
 						</div>
 						<div class="text-left">
-							<h3 class="font-semibold text-foreground group-hover:text-primary transition-colors">回到首頁
-							</h3>
+							<h4 class="font-semibold text-foreground group-hover:text-primary transition-colors">回到首頁
+							</h4>
 							<p class="text-sm text-muted-foreground">探索我們的主要內容</p>
 						</div>
 					</div>
@@ -94,8 +94,8 @@ get_header ();
 							</svg>
 						</div>
 						<div class="text-left">
-							<h3 class="font-semibold text-foreground group-hover:text-primary transition-colors">最新文章
-							</h3>
+							<h4 class="font-semibold text-foreground group-hover:text-primary transition-colors">最新文章
+							</h4>
 							<p class="text-sm text-muted-foreground">查看最新發布的內容</p>
 						</div>
 					</div>
@@ -114,8 +114,8 @@ get_header ();
 							</svg>
 						</div>
 						<div class="text-left">
-							<h3 class="font-semibold text-foreground group-hover:text-primary transition-colors">聯絡我們
-							</h3>
+							<h4 class="font-semibold text-foreground group-hover:text-primary transition-colors">聯絡我們
+							</h4>
 							<p class="text-sm text-muted-foreground">需要協助？請聯繫我們</p>
 						</div>
 					</div>
@@ -142,10 +142,11 @@ get_header ();
 									<?php echo get_the_post_thumbnail ( $post[ 'ID' ], 'thumbnail', array( 'class' => 'w-16 h-16 object-cover rounded-md' ) ); ?>
 								</div>
 							<?php endif; ?>
-							<div class="flex-1 min-w-0">
-								<h3 class="font-medium text-foreground group-hover:text-primary transition-colors mb-1">
+							<div class="flex-1 min-w-0 text-left">
+								<h6
+									class="font-medium text-foreground group-hover:text-primary transition-colors mb-1 leading-loose">
 									<?php echo esc_html ( $post[ 'post_title' ] ); ?>
-								</h3>
+								</h6>
 								<p class="text-sm text-muted-foreground">
 									<?php echo get_the_date ( '', $post[ 'ID' ] ); ?>
 								</p>

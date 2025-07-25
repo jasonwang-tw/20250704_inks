@@ -13,3 +13,115 @@ Requires at least: 4.6
 Tested up to: 6.6
 Requires PHP: 7.4
 */
+
+/* ==========================================================================
+   Base styles - Tailwind CSS inspired reset
+   ========================================================================== */
+
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML and body setup */
+html {
+  line-height: 1.5; /* Leading-6 in Tailwind */
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+
+body {
+  line-height: inherit;
+}
+
+/* ==========================================================================
+   Typography - Headings
+   ========================================================================== */
+
+.content-area h1,
+.content-area h2,
+.content-area h3,
+.content-area h4,
+.content-area h5,
+.content-area h6 {
+  font-weight: 600; /* font-semibold */
+  line-height: 1.25; /* leading-tight */
+  margin-top: 2rem !important; /* mt-8 */
+  margin-bottom: 1rem !important; /* mb-4 */
+}
+
+.content-area h1:first-child,
+.content-area h2:first-child,
+.content-area h3:first-child,
+.content-area h4:first-child,
+.content-area h5:first-child,
+.content-area h6:first-child {
+  margin-top: 0 !important; /* Remove top margin for first heading */
+}
+
+h1 {
+  font-size: 2.25rem !important; /* text-4xl */
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.875rem !important; /* text-3xl */
+  line-height: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem !important; /* text-2xl */
+  line-height: 2rem;
+}
+
+h4 {
+  font-size: 1.25rem !important; /* text-xl */
+  line-height: 1.75rem;
+}
+
+h5 {
+  font-size: 1.125rem !important; /* text-lg */
+  line-height: 1.75rem;
+}
+
+h6 {
+  font-size: 1rem !important; /* text-base */
+  line-height: 1.5rem;
+}
+
+hr {
+  margin: 2rem 0 !important;
+}
+
+#menu-desktop_topmenu li:hover .sub-menu,
+#menu-mobile_topmenu li:hover .sub-menu {
+  display: block;
+}
+
+#menu-desktop_topmenu .sub-menu {
+  position: absolute;
+}
+
+#menu-mobile_topmenu .sub-menu {
+  border-radius: 0;
+  box-shadow: none;
+  border-right: none;
+  border-left: none;
+}
+
+.sub-menu {
+  display: none;
+}

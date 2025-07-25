@@ -10,8 +10,9 @@ get_header ();
 ?>
 
 <!-- 文章標題區 -->
-<section class="bg-gradient-to-r from-primary to-primary/80 text-white py-16" style="margin-top: 64px;">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="from-primary to-primary/80 text-white py-16"
+	style="margin-top: 64px; background: linear-gradient(135deg, #0c386a, #071d36);">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center">
 			<!-- 分類標籤 -->
 			<?php
@@ -67,8 +68,8 @@ get_header ();
 </section>
 
 <!-- 文章內容區 -->
-<section class="py-16 bg-background">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-16 bg-background content-area">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="grid lg:grid-cols-3 gap-8">
 			<!-- 主要內容區 -->
 			<div class="lg:col-span-2">
@@ -82,7 +83,7 @@ get_header ();
 
 					<div class="p-8">
 						<!-- 文章內容 -->
-						<div class="prose prose-lg max-w-none text-foreground">
+						<div class="prose prose-lg max-w-none text-foreground leading-loose">
 							<?php the_content (); ?>
 						</div>
 
@@ -215,12 +216,12 @@ get_header ();
 									</div>
 								<?php endif; ?>
 								<div class="flex-1 min-w-0">
-									<h4 class="text-sm font-medium text-foreground mb-1">
+									<h6 class="text-sm font-medium text-foreground mb-1 leading-loose">
 										<a href="<?php echo get_permalink ( $post[ 'ID' ] ); ?>"
 											class="hover:text-primary transition-colors">
 											<?php echo esc_html ( $post[ 'post_title' ] ); ?>
 										</a>
-									</h4>
+									</h6>
 									<p class="text-xs text-muted-foreground">
 										<?php echo get_the_date ( '', $post[ 'ID' ] ); ?>
 									</p>
@@ -264,9 +265,10 @@ get_header ();
 <?php
 // 自訂函數：計算閱讀時間
 function get_reading_time () {
-	$content      = get_the_content ();
-	$word_count   = str_word_count ( strip_tags ( $content ) );
-	$reading_time = ceil ( $word_count / 200 ); // 假設每分鐘閱讀 200 字
+	$content       = get_the_content ();
+	$clean_content = strip_tags ( $content );
+	$char_count    = mb_strlen ( $clean_content, 'UTF-8' );
+	$reading_time  = ceil ( $char_count / 350 ); // 假設每分鐘閱讀 350 個中文字
 	return $reading_time;
 	}
 

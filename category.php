@@ -10,7 +10,8 @@ get_header ();
 ?>
 
 <!-- 分類頁面標題區 -->
-<section id="category" class="bg-gradient-to-r from-primary to-primary/80 text-white py-16" style="margin-top: 64px;">
+<section id="category" class="from-primary to-primary/80 text-white py-16"
+	style="margin-top: 64px; background: linear-gradient(135deg, #0c386a, #071d36);">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center">
 			<h1 class="text-4xl md:text-5xl font-bold mb-4">
@@ -170,12 +171,12 @@ get_header ();
 									</div>
 								<?php endif; ?>
 								<div class="flex-1 min-w-0">
-									<h4 class="text-sm font-medium text-foreground mb-1">
+									<h6 class="text-sm font-medium text-foreground mb-1 leading-loose">
 										<a href="<?php echo get_permalink ( $post[ 'ID' ] ); ?>"
 											class="hover:text-primary transition-colors">
 											<?php echo esc_html ( $post[ 'post_title' ] ); ?>
 										</a>
-									</h4>
+									</h6>
 									<p class="text-xs text-muted-foreground">
 										<?php echo get_the_date ( '', $post[ 'ID' ] ); ?>
 									</p>

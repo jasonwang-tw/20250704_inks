@@ -10,6 +10,7 @@
 	<link rel="icon" href="<?php echo get_template_directory_uri (); ?>/assets/favicon.png" type="image/png">
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri (); ?>/style.css?ver=<?= time (); ?>">
 	<script>
 		tailwind.config = {
 			darkMode: 'class',
@@ -222,7 +223,7 @@
 		}
 
 		.mobile-nav-menu .active a {
-			color: hsl(var(--primary));
+			color: hsl(var(--muted-foreground));
 		}
 
 		span.wpcf7-not-valid-tip {
@@ -240,37 +241,30 @@
 <body class="min-h-screen bg-background text-foreground">
 	<!-- 導航欄 -->
 	<?php
-	$home_url  = home_url ();
-	$nav_items = [ 
-		[ 'text' => '功能特色', 'href' => $home_url . '#features' ],
-		[ 'text' => '解決方案', 'href' => $home_url . '#solutions' ],
-		[ 'text' => '合作夥伴', 'href' => $home_url . '#partners' ],
-		//[ 'text' => '方案價格', 'href' => $home_url . '#pricing' ],
-	];
 
 	$nav_buttons = [ 
 		[ 
-			'text'   => '了解功能',
-			'class'  => 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-			'hidden' => 'hidden',
+			'text'  => '登入',
+			'class' => 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+			'href'  => home_url () . '/login',
 		],
 		[ 
-			'text'   => '免費諮詢',
-			'class'  => 'bg-primary text-white hover:bg-primary/80',
-			'hidden' => '',
+			'text'  => '免費諮詢',
+			'class' => 'bg-primary text-white hover:bg-primary/80',
+			'href'  => home_url () . '#contact',
 		],
 	];
 
 	$mobile_buttons = [ 
 		[ 
-			'text'   => '了解功能',
-			'class'  => 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-			'hidden' => 'hidden',
+			'text'  => '登入',
+			'class' => 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+			'href'  => home_url () . '/login',
 		],
 		[ 
-			'text'   => '免費諮詢',
-			'class'  => 'bg-primary text-white hover:bg-primary/80',
-			'hidden' => '',
+			'text'  => '免費諮詢',
+			'class' => 'bg-primary text-white hover:bg-primary/80',
+			'href'  => home_url () . '#contact',
 		],
 	];
 	?>
@@ -287,11 +281,7 @@
 				<!-- Desktop Navigation -->
 				<div class="hidden md:block">
 					<div class="ml-10 flex items-baseline space-x-8">
-						<?php foreach ( $nav_items as $item ) : ?>
-							<a href="<?php echo $item[ 'href' ]; ?>"
-								class="text-primary hover:text-secondary px-3 py-2 text-sm font-medium transition-colors duration-200"><?php echo $item[ 'text' ]; ?></a>
-							<?php
-						endforeach;
+						<?php
 
 						// 使用 WordPress 內建的導航列功能
 						wp_nav_menu ( array(
@@ -315,10 +305,10 @@
 							class="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"></i>
 					</button>
 					<?php foreach ( $nav_buttons as $button ) : ?>
-						<button
-							class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 <?php echo $button[ 'class' ]; ?> h-9 px-4 py-2 <?php echo $button[ 'hidden' ]; ?>">
+						<a href="<?php echo $button[ 'href' ]; ?>"
+							class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 <?php echo $button[ 'class' ]; ?> h-9 px-4 py-2">
 							<?php echo $button[ 'text' ]; ?>
-						</button>
+						</a>
 					<?php endforeach; ?>
 				</div>
 
@@ -341,11 +331,7 @@
 			<!-- Mobile Navigation -->
 			<div id="mobile-menu" class="md:hidden hidden">
 				<div class="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md border-b border-border">
-					<?php foreach ( $nav_items as $item ) : ?>
-						<a href="<?php echo $item[ 'href' ]; ?>"
-							class="text-muted-foreground hover:text-foreground block px-3 py-2 text-base font-medium"><?php echo $item[ 'text' ]; ?></a>
-					<?php endforeach;
-
+					<?php
 					// 使用 WordPress 內建的導航列功能
 					wp_nav_menu ( array(
 						'theme_location' => 'mobile_menu',
@@ -357,10 +343,10 @@
 					?>
 					<div class="flex flex-col space-y-2 px-3 pt-4">
 						<?php foreach ( $mobile_buttons as $button ) : ?>
-							<button
-								class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 <?php echo $button[ 'class' ]; ?> h-9 px-4 py-2 <?php echo $button[ 'hidden' ]; ?>">
+							<a href="<?php echo $button[ 'href' ]; ?>"
+								class="btn-animate inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 <?php echo $button[ 'class' ]; ?> h-9 px-4 py-2">
 								<?php echo $button[ 'text' ]; ?>
-							</button>
+							</a>
 						<?php endforeach; ?>
 					</div>
 				</div>

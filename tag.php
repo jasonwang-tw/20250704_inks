@@ -10,7 +10,7 @@ get_header ();
 ?>
 
 <!-- 標籤頁面標題區 -->
-<section class="bg-gradient-to-r from-secondary to-secondary/80 text-primary py-16">
+<section class="bg-gradient-to-r from-secondary to-secondary/80 text-primary py-16" style="margin-top: 64px;">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center">
 			<div class="flex items-center justify-center mb-4">
@@ -186,7 +186,7 @@ get_header ();
 							?>
 							<a href="<?php echo esc_url ( get_tag_link ( $tag->term_id ) ); ?>"
 								class="flex items-center space-x-1 px-3 py-1 rounded-full text-sm transition-colors <?php echo $is_current ? 'bg-secondary text-primary' : 'bg-muted text-muted-foreground hover:bg-secondary hover:text-primary'; ?>">
-								<span>#<?php echo esc_html ( $tag->name ); ?></span>
+								<span><?php echo esc_html ( $tag->name ); ?></span>
 								<span class="text-xs">(<?php echo $tag->count; ?>)</span>
 							</a>
 							<?php
@@ -243,12 +243,12 @@ get_header ();
 									</div>
 								<?php endif; ?>
 								<div class="flex-1 min-w-0">
-									<h4 class="text-sm font-medium text-foreground mb-1">
+									<h6 class="text-sm font-medium text-foreground mb-1 leading-loose">
 										<a href="<?php echo get_permalink ( $post[ 'ID' ] ); ?>"
 											class="hover:text-primary transition-colors">
 											<?php echo esc_html ( $post[ 'post_title' ] ); ?>
 										</a>
-									</h4>
+									</h6>
 									<p class="text-xs text-muted-foreground">
 										<?php echo get_the_date ( '', $post[ 'ID' ] ); ?>
 									</p>

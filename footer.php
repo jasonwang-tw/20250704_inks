@@ -78,7 +78,7 @@ wp_footer ();
 		<div class="border-t border-gray-600 mt-10 pt-10 text-center">
 			<p class="text-gray-400 text-sm">
 				© 2025 INKS印事平台. 版權所有. |
-				<a href="#" class="hover:text-white transition-colors">隱私政策</a> |
+				<a href="/privacy" class="hover:text-white transition-colors">隱私政策</a> |
 				<a href="#" class="hover:text-white transition-colors">服務條款</a>
 			</p>
 		</div>
